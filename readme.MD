@@ -23,7 +23,7 @@ This module is developed for joindevops.com. In this module you can find resourc
 
 ## Inputs
 * project_name(required):Type is string. User should provide the value as per their project name.
-* environment(optional):Type is string. Default value is dev.
+* environment(optional):Type is string. Default value is empty.
 * common_tags(required):Type is map. User should provide the tags related to their project.
 * vpc_cidr(optional):Type is string. Default value is 10.0.0.0/16.
 * enable_dns_hostname(optional):Type is bool. Default value is true.
