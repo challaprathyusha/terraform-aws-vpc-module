@@ -6,7 +6,7 @@ variable "project_name" {
 
 variable "environment" {
     type = string
-    default = "dev"
+    default = ""
 }
 
 variable "common_tags" {
@@ -121,3 +121,8 @@ variable "acceptor_vpc_id" {
     type = string
     default = ""
 }
+
+# variable "peer_owner_id" {
+#     type = string
+#     default = ""
+# }
