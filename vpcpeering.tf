@@ -1,9 +1,10 @@
 #resource block for vpc peering
+#this vpc peering is useful when both the acceptor vpc and requestor vpc are from same aws account
 resource "aws_vpc_peering_connection" "peering" {
     count = var.is_peering_required ? 1 : 0
 
     vpc_id        = aws_vpc.main.id #requestor 
-#   peer_owner_id = var.peer_owner_id 
+#   peer_owner_id = var.peer_owner_id
     peer_vpc_id   = var.acceptor_vpc_id == "" ? data.aws_vpc.default_vpc.id : var.acceptor_vpc_id #acceptor 
 #   both VPCs need to be in the same AWS account and region
 #   If both VPCs are not in the same AWS account and region do not enable the auto_accept attribute
@@ -19,6 +20,7 @@ resource "aws_vpc_peering_connection" "peering" {
 }
 
 #adding routes to the peering connection in public route table
+#this routes are created only if acceptor vpc is default vpc and from same account as requestor vpc 
 resource "aws_route" "public_peering" {
     count = var.is_peering_required && var.acceptor_vpc_id == "" ? 1 : 0
     route_table_id            = aws_route_table.public.id

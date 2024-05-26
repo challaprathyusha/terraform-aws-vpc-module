@@ -106,7 +106,7 @@ variable "database_routetable_tags" {
     default = {}
 }
 
-##vpc-peering##
+##vpc-peering## 
 variable "is_peering_required" {
     type = bool
     default = false
@@ -116,12 +116,13 @@ variable "vpc_peering_tags" {
     type = map
     default = {}
 }
-
+#if acceptor vpc is empty then we take default vpc otherwise module user overrides this default value 
 variable "acceptor_vpc_id" {
     type = string
     default = ""
 }
 
+#if acceptor vpc is from different aws account, we will override this variable value with acceptor vpc's account id
 # variable "peer_owner_id" {
 #     type = string
 #     default = ""

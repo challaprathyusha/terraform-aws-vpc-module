@@ -4,6 +4,7 @@
 
 This module is developed for joindevops.com. In this module you can find resource blocks for below mentioned services in aws.This module can create resources in first two AZ's for HA.
 
+# Resources
 * VPC
 * IGW
 * IGW attachment to VPC
