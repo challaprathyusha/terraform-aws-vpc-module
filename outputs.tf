@@ -30,6 +30,11 @@ output "db_subnet_group_id" {
   
 }
 
+output "db_subnet_group_name" {
+    value = aws_db_subnet_group.default.name
+  
+}
+
 output "eip_allocation_id" {
     value = aws_eip.elastic_ip.allocation_id
   
