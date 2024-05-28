@@ -2,9 +2,9 @@ output "az_names" {
     value = data.aws_availability_zones.available.names
 }
 
-output "vpc_id" {
-    value = aws_vpc.main.id
-}
+# output "vpc_id" {
+#     value = aws_vpc.main.id
+# }
 
 output "igw_id" {
     value = aws_internet_gateway.gw.id
